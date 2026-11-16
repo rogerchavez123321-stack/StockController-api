@@ -3,16 +3,17 @@ package StockController.api
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "producto")
-class Producto(
+@Table(name = "productos") // Fuerza a usar la tabla en plural de phpMyAdmin
+data class Producto(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-    val name: String = "",
-    val brand: String = "",
-    val quantity: Int = 0,
-    val status: String = "",
-    val location: String = "",
-    val holderName: String = "",
-    val notes: String = ""
+    val id_producto: Long = 0,
+    val codigo: String? = null,
+    val nombre: String? = null,
+    val descripcion: String? = null,
+    val imagen_url: String? = null,
+    val modelo: String? = null,
+    val numero_serie: String? = null,
+    val cantidad: Int = 0,
+    val status: String? = null
 )
